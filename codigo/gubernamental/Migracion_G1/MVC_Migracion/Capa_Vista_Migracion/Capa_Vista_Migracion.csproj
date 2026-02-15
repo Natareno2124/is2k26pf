@@ -34,8 +34,13 @@
     <Reference Include="Capa_Controlador_Migracion">
       <HintPath>..\Capa_Controlador_Migracion\bin\Debug\Capa_Controlador_Migracion.dll</HintPath>
     </Reference>
+    <Reference Include="Capa_Controlador_Seguridad">
+      <HintPath>..\..\..\..\componentes\seguridad\SeguridadMVC\SeguridadMVC\CapaControlador\bin\Debug\Capa_Controlador_Seguridad.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,7 +49,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_Cambiar_Contrasenea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Cambiar_Contrasenea.Designer.cs">
+      <DependentUpon>Frm_Cambiar_Contrasenea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Login_Migracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Login_Migracion.Designer.cs">
+      <DependentUpon>Frm_Login_Migracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Recuperar_Contrasena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Recuperar_Contrasena.Designer.cs">
+      <DependentUpon>Frm_Recuperar_Contrasena.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_MDI_Migracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MDI_Migracion.Designer.cs">
+      <DependentUpon>Frm_MDI_Migracion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Frm_Cambiar_Contrasenea.resx">
+      <DependentUpon>Frm_Cambiar_Contrasenea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Login_Migracion.resx">
+      <DependentUpon>Frm_Login_Migracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Recuperar_Contrasena.resx">
+      <DependentUpon>Frm_Recuperar_Contrasena.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MDI_Migracion.resx">
+      <DependentUpon>Frm_MDI_Migracion.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
