@@ -75,5 +75,35 @@ namespace Capa_Modelo_Citas
 
             return tabla;
         }
+
+        public DataTable ObtenerHorarios()
+        {
+            DataTable dt = new DataTable();
+            string sql = "SELECT Pk_Id_Horarios, Cmp_Hora FROM Tbl_Horarios";
+
+            using (OdbcConnection conn = conexion.conexion())
+            {
+                OdbcDataAdapter da = new OdbcDataAdapter(sql, conn);
+                da.Fill(dt);
+            }
+
+            return dt;
+        }
+
+        public DataTable ObtenerSedes()
+        {
+            DataTable dt = new DataTable();
+            string sql = "SELECT Pk_Id_Sede, Cmp_Nombre_Sede FROM Tbl_Sede";
+
+            using (OdbcConnection conn = conexion.conexion())
+            {
+                OdbcDataAdapter da = new OdbcDataAdapter(sql, conn);
+                da.Fill(dt);
+            }
+
+            return dt;
+        }
+
+
     }
 }

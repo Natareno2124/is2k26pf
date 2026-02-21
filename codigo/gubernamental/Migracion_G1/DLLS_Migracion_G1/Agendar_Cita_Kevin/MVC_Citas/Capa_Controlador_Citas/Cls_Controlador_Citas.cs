@@ -64,5 +64,14 @@ namespace Capa_Controlador_Citas
         {
             return modelo.ObtenerTiposCita();
         }
+        public DataTable ObtenerHorarios()
+        {
+            return modelo.ObtenerHorarios();
+        }
+
+        public DataTable ObtenerSedes()
+        {
+            return modelo.ObtenerSedes();
+        }
     }
 }

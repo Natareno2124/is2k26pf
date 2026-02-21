@@ -28,6 +28,18 @@ namespace Capa_Vista_Citas
             Cbo_Tipo_Cita.DisplayMember = "Cmp_Nombre_Tipo_Cita";
             Cbo_Tipo_Cita.ValueMember = "Pk_Id_Tipo_Cita";
             Cbo_Tipo_Cita.SelectedIndex = -1; // Nada seleccionado
+
+            // HORARIOS
+            Cbo_Horario.DataSource = controlador.ObtenerHorarios();
+            Cbo_Horario.DisplayMember = "Cmp_Hora";
+            Cbo_Horario.ValueMember = "Pk_Id_Horarios";
+            Cbo_Horario.SelectedIndex = -1;
+
+            // SEDES
+            Cbo_Sede.DataSource = controlador.ObtenerSedes();
+            Cbo_Sede.DisplayMember = "Cmp_Nombre_Sede";
+            Cbo_Sede.ValueMember = "Pk_Id_Sede";
+            Cbo_Sede.SelectedIndex = -1;
         }
 
         private void button1_Click(object sender, EventArgs e)
