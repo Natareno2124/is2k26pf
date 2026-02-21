@@ -46,7 +46,8 @@
 
     <Reference Include="Capa_Vista_Horario">
       <HintPath>..\..\DLLS_Migracion_G1\Horario_Cesar\Capa_Vista_Horario\Capa_Vista_Horario\bin\Debug\Capa_Vista_Horario.dll</HintPath>
-
+    </Reference>
+    
     <Reference Include="Capa_Vista_Navegador">
       <HintPath>..\..\..\..\componentes\navegador\NavegadorMVC\CapaVistaNavegador\bin\Debug\Capa_Vista_Navegador.dll</HintPath>
 
