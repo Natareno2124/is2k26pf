@@ -73,5 +73,15 @@ namespace Capa_Controlador_Citas
         {
             return modelo.ObtenerSedes();
         }
+
+        public bool AsignarCita(int idCita)
+        {
+            int idEstadoAsignado = modelo.ObtenerIdEstadoAsignado();
+
+            if (idEstadoAsignado == 0)
+                return false;
+
+            return modelo.ActualizarEstadoCita(idCita, idEstadoAsignado);
+        }
     }
 }

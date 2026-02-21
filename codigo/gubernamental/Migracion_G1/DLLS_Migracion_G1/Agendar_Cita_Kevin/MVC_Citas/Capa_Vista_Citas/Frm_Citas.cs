@@ -56,6 +56,7 @@ namespace Capa_Vista_Citas
             );
 
             MessageBox.Show(mensaje);
+
         }
     }
 }

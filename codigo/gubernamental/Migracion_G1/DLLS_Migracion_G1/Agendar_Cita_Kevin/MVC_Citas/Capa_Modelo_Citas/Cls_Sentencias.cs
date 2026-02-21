@@ -104,6 +104,37 @@ namespace Capa_Modelo_Citas
             return dt;
         }
 
+        public int ObtenerIdEstadoAsignado()
+        {
+            int idEstado = 0;
+            string sql = "SELECT Pk_Id_Estado_Cita FROM Tbl_Estado_Cita WHERE Cmp_Nombre_Estado = 'Asignado'";
+
+            using (OdbcConnection conn = conexion.conexion())
+            {
+                OdbcCommand cmd = new OdbcCommand(sql, conn);
+                object result = cmd.ExecuteScalar();
+
+                if (result != null)
+                    idEstado = Convert.ToInt32(result);
+            }
+
+            return idEstado;
+        }
+
+        public bool ActualizarEstadoCita(int idCita, int idEstado)
+        {
+            string sql = "UPDATE Tbl_Cita SET Fk_Id_Estado_Cita = ? WHERE Pk_Id_Cita = ?";
+
+            using (OdbcConnection conn = conexion.conexion())
+            {
+                OdbcCommand cmd = new OdbcCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@estado", idEstado);
+                cmd.Parameters.AddWithValue("@cita", idCita);
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
+
 
     }
 }
