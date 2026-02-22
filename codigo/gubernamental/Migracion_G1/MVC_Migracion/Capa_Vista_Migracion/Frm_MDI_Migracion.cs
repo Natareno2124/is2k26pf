@@ -88,5 +88,12 @@ namespace Capa_Vista_Migracion
         //    tipo_pasaporte.MdiParent = this;
         //    tipo_pasaporte.Show();
         }
+
+        private void sedesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                Capa_Vista_Sedes.Frm_Sedes sedes = new Capa_Vista_Sedes.Frm_Sedes();
+                sedes.MdiParent = this;
+                sedes.Show();
+        }
     }
 }

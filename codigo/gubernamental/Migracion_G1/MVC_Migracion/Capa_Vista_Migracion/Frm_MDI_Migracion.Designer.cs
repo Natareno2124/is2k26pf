@@ -90,7 +90,7 @@ namespace Capa_Vista_Migracion
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.exitToolStripMenuItem.Text = "&Salir";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
@@ -108,25 +108,25 @@ namespace Capa_Vista_Migracion
             // renapToolStripMenuItem
             // 
             this.renapToolStripMenuItem.Name = "renapToolStripMenuItem";
-            this.renapToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.renapToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.renapToolStripMenuItem.Text = "Renap";
             // 
             // generarBoletaToolStripMenuItem
             // 
             this.generarBoletaToolStripMenuItem.Name = "generarBoletaToolStripMenuItem";
-            this.generarBoletaToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.generarBoletaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.generarBoletaToolStripMenuItem.Text = "Generar Boleta";
             // 
             // agendarCitaToolStripMenuItem
             // 
             this.agendarCitaToolStripMenuItem.Name = "agendarCitaToolStripMenuItem";
-            this.agendarCitaToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.agendarCitaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.agendarCitaToolStripMenuItem.Text = "Agendar Cita";
             // 
             // antecedentesToolStripMenuItem
             // 
             this.antecedentesToolStripMenuItem.Name = "antecedentesToolStripMenuItem";
-            this.antecedentesToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.antecedentesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.antecedentesToolStripMenuItem.Text = "Antecedentes";
             // 
             // mantenimientosToolStripMenuItem
@@ -161,6 +161,7 @@ namespace Capa_Vista_Migracion
             this.sedesToolStripMenuItem.Name = "sedesToolStripMenuItem";
             this.sedesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.sedesToolStripMenuItem.Text = "Sedes";
+            this.sedesToolStripMenuItem.Click += new System.EventHandler(this.sedesToolStripMenuItem_Click);
             // 
             // estadoCitaToolStripMenuItem
             // 
