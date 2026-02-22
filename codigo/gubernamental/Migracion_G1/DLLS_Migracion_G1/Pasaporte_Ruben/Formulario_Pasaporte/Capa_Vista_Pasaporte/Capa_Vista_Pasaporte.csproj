@@ -55,11 +55,20 @@
     <Compile Include="Frm_pasaporte.Designer.cs">
       <DependentUpon>Frm_pasaporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Ver_Pasaporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Ver_Pasaporte.Designer.cs">
+      <DependentUpon>Frm_Ver_Pasaporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Frm_pasaporte.resx">
       <DependentUpon>Frm_pasaporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Ver_Pasaporte.resx">
+      <DependentUpon>Frm_Ver_Pasaporte.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
