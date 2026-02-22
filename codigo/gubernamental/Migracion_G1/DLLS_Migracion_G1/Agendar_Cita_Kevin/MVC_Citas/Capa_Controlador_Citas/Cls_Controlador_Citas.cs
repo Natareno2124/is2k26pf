@@ -46,7 +46,7 @@ namespace Capa_Controlador_Citas
                 return false;
             }
 
-            // 👇 AQUÍ se crea el Modelo
+            
             Cls_Modelo_Citas cita = new Cls_Modelo_Citas
             {
                 FechaCita = fecha,

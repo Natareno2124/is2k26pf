@@ -84,9 +84,9 @@ namespace Capa_Vista_Migracion
         //Sergio Izeppi 21/02/2026
         private void tipoPasaporteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-        //    Capa_Vista_Tipo_Pasaporte.Frm_Tipo_Pasaporte tipo_pasaporte = new Capa_Vista_Tipo_Pasaporte.Frm_Tipo_Pasaporte();
-        //    tipo_pasaporte.MdiParent = this;
-        //    tipo_pasaporte.Show();
+            Capa_Vista_Tipo_Pasaporte.Frm_Tipo_Pasaporte tipo_pasaporte = new Capa_Vista_Tipo_Pasaporte.Frm_Tipo_Pasaporte();
+            tipo_pasaporte.MdiParent = this;
+            tipo_pasaporte.Show();
         }
 
         private void sedesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -95,5 +95,43 @@ namespace Capa_Vista_Migracion
                 sedes.MdiParent = this;
                 sedes.Show();
         }
+
+        //===== Kevin Natareno , 22/02/2026 =================================
+        private void renapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Capa_Vista_Renap.Frm_Renap renap = new Capa_Vista_Renap.Frm_Renap();
+            renap.MdiParent = this;
+            renap.Show();
+        }
+
+        private void generarBoletaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Capa_Vista_Banrural.Frm_Banrural banrural = new Capa_Vista_Banrural.Frm_Banrural();
+            banrural.MdiParent = this;
+            banrural.Show();
+        }
+
+        private void agendarCitaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Capa_Vista_Citas.Frm_Citas citas = new Capa_Vista_Citas.Frm_Citas();
+            citas.MdiParent = this;
+            citas.Show();
+        }
+
+        private void antecedentesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Capa_Vista_Antecedentes.Frm_Antecedentes ant = new Capa_Vista_Antecedentes.Frm_Antecedentes();
+            ant.MdiParent = this;
+            ant.Show();
+        }
+
+        private void paísEmisorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Capa_Vista_Pais_Emisor.Frm_Pais_Emisor pais = new Capa_Vista_Pais_Emisor.Frm_Pais_Emisor();
+            pais.MdiParent = this;
+            pais.Show();
+        }
+
+        //===== Kevin Natareno , 22/02/2026 =================================
     }
 }

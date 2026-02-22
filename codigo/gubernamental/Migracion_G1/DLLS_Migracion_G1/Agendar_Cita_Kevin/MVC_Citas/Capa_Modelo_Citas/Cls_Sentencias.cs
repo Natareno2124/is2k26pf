@@ -145,16 +145,16 @@ namespace Capa_Modelo_Citas
             )
         {
             string sql = @"
-    INSERT INTO Tbl_Cita
-    (
-        Fk_Id_Tipo_Cita,
-        Cmp_Fecha_Cita,
-        Fk_Id_Horarios,
-        Fk_Id_Sede,
-        Fk_Id_Estado_Cita,
-        Fk_Id_Boleta
-    )
-    VALUES (?, ?, ?, ?, ?, ?)";
+            INSERT INTO Tbl_Cita
+            (
+                Fk_Id_Tipo_Cita,
+                Cmp_Fecha_Cita,
+                Fk_Id_Horarios,
+                Fk_Id_Sede,
+                Fk_Id_Estado_Cita,
+                Fk_Id_Boleta
+            )
+            VALUES (?, ?, ?, ?, ?, ?)";
 
             using (OdbcConnection conn = conexion.conexion())
             {

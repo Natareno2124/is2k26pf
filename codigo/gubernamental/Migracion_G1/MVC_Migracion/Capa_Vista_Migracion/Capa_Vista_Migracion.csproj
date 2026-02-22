@@ -43,14 +43,29 @@
     <Reference Include="Capa_Controlador_Seguridad">
       <HintPath>..\..\..\..\componentes\seguridad\SeguridadMVC\SeguridadMVC\CapaControlador\bin\Debug\Capa_Controlador_Seguridad.dll</HintPath>
     </Reference>
+    <Reference Include="Capa_Vista_Antecedentes">
+      <HintPath>..\..\DLLS_Migracion_G1\Antecedentes_Dani\DLL_Antecedentes\Capa_Vista_Antecedentes\bin\Debug\Capa_Vista_Antecedentes.dll</HintPath>
+    </Reference>
+    <Reference Include="Capa_Vista_Banrural">
+      <HintPath>..\..\DLLS_Migracion_G1\Banrural_Paula\Banrural_MVC\Capa_Vista_Banrural\bin\Debug\Capa_Vista_Banrural.dll</HintPath>
+    </Reference>
+    <Reference Include="Capa_Vista_Citas">
+      <HintPath>..\..\DLLS_Migracion_G1\Agendar_Cita_Kevin\MVC_Citas\Capa_Vista_Citas\bin\Debug\Capa_Vista_Citas.dll</HintPath>
+    </Reference>
     <Reference Include="Capa_Vista_Horario">
       <HintPath>..\..\DLLS_Migracion_G1\Horario_Cesar\Capa_Vista_Horario\Capa_Vista_Horario\bin\Debug\Capa_Vista_Horario.dll</HintPath>
     </Reference>
     <Reference Include="Capa_Vista_Navegador">
       <HintPath>..\..\..\..\componentes\navegador\NavegadorMVC\CapaVistaNavegador\bin\Debug\Capa_Vista_Navegador.dll</HintPath>
     </Reference>
+    <Reference Include="Capa_Vista_Pais_Emisor">
+      <HintPath>..\..\DLLS_Migracion_G1\Emisor_Pais_Ernesto\Formulario_Pais_Emisor\Capa_Vista_Pais_Emisor\bin\Debug\Capa_Vista_Pais_Emisor.dll</HintPath>
+    </Reference>
     <Reference Include="Capa_Vista_Pasaporte">
       <HintPath>..\..\DLLS_Migracion_G1\Pasaporte_Ruben\Formulario_Pasaporte\Capa_Vista_Pasaporte\bin\Debug\Capa_Vista_Pasaporte.dll</HintPath>
+    </Reference>
+    <Reference Include="Capa_Vista_Renap">
+      <HintPath>..\..\DLLS_Migracion_G1\Renap_Mariale\Renap\Capa_Vista_Renap\bin\Debug\Capa_Vista_Renap.dll</HintPath>
     </Reference>
     <Reference Include="Capa_Vista_Sedes">
       <HintPath>..\..\DLLS_Migracion_G1\Sede_Gerber\Capa_Vista_Sedes\Capa_Vista_Sedes\bin\Debug\Capa_Vista_Sedes.dll</HintPath>

@@ -15,6 +15,43 @@ namespace Capa_Vista_Pais_Emisor
         public Frm_Pais_Emisor()
         {
             InitializeComponent();
+            Capa_Controlador_Navegador.Cls_ConfiguracionDataGridView config = new Capa_Controlador_Navegador.Cls_ConfiguracionDataGridView
+            {
+                Ancho = 1100,
+                Alto = 200,
+                PosX = 10,
+                PosY = 300,
+                ColorFondo = Color.AliceBlue,
+                TipoScrollBars = ScrollBars.Both,
+                Nombre = "dgv_empleados"
+            };
+
+            string[] columnas = {
+                "Tbl_Horarios",
+                "Pk_Id_Horarios",
+                "Cmp_Hora"
+            };
+
+            string[] sEtiquetas = {
+                "Código De Horarios",
+                "Hora"
+            };
+
+
+
+            int id_aplicacion = 310;
+            navegador1.IPkId_Modulo = 4;
+            navegador1.IPkId_Aplicacion = id_aplicacion;
+            navegador1.configurarDataGridView(config);
+            navegador1.SNombreTabla = columnas[0];
+            navegador1.SAlias = columnas;
+            navegador1.SEtiquetas = sEtiquetas;
+            navegador1.mostrarDatos();
+        }
+
+        private void navegador1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
