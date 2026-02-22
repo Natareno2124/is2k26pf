@@ -27,21 +27,25 @@ namespace Capa_Vista_Pais_Emisor
             };
 
             string[] columnas = {
-                "Tbl_Horarios",
-                "Pk_Id_Horarios",
-                "Cmp_Hora"
+                "Tbl_pais_emisor",
+                "Pk_Id_Pais_Emisor",
+                "Cmp_Nombre_Pais",
+                "Cmp_Codigo_Pais"
             };
 
             string[] sEtiquetas = {
-                "Código De Horarios",
-                "Hora"
+                "ID Pais",
+                "Nombre¨Pais",
+                "Codigo Pais"
             };
 
 
 
-            int id_aplicacion = 310;
-            navegador1.IPkId_Modulo = 4;
+            int id_aplicacion = 401;
+            int id_modulo = 7;
+
             navegador1.IPkId_Aplicacion = id_aplicacion;
+            navegador1.IPkId_Modulo = id_modulo;
             navegador1.configurarDataGridView(config);
             navegador1.SNombreTabla = columnas[0];
             navegador1.SAlias = columnas;

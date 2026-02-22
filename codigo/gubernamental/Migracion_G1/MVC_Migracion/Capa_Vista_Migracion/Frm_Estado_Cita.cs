@@ -34,8 +34,8 @@ namespace Capa_Vista_Migracion
                 "Nombre Estado"
             };
 
-            int id_aplicacion = 301; 
-            int id_modulo = 4;     
+            int id_aplicacion = 401; 
+            int id_modulo = 7;     
 
             navegador1.IPkId_Aplicacion = id_aplicacion;
             navegador1.IPkId_Modulo = id_modulo;

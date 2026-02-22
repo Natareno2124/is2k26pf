@@ -132,6 +132,13 @@ namespace Capa_Vista_Migracion
             pais.Show();
         }
 
+        private void asignaciónCitaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Capa_Vista_Asignacion.Frm_Asignacion_Cita cita = new Capa_Vista_Asignacion.Frm_Asignacion_Cita();
+            cita.MdiParent = this;
+            cita.Show();
+        }
+
         //===== Kevin Natareno , 22/02/2026 =================================
     }
 }

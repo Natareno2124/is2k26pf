@@ -44,9 +44,11 @@ namespace Capa_Vista_Tipo_Pasaporte
 
 
 
-            int id_aplicacion = 311;
-            navegador1.IPkId_Modulo = 4;
+            int id_aplicacion = 401;
+            int id_modulo = 7;
+
             navegador1.IPkId_Aplicacion = id_aplicacion;
+            navegador1.IPkId_Modulo = id_modulo;
             navegador1.configurarDataGridView(config);
             navegador1.SNombreTabla = columnas[0];
             navegador1.SAlias = columnas;

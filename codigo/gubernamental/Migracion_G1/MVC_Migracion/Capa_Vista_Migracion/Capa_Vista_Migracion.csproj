@@ -46,6 +46,9 @@
     <Reference Include="Capa_Vista_Antecedentes">
       <HintPath>..\..\DLLS_Migracion_G1\Antecedentes_Dani\DLL_Antecedentes\Capa_Vista_Antecedentes\bin\Debug\Capa_Vista_Antecedentes.dll</HintPath>
     </Reference>
+    <Reference Include="Capa_Vista_Asignacion">
+      <HintPath>..\..\DLLS_Migracion_G1\AsignacionCita_Anderson\Asignar_Cita\Capa_Vista_Asignacion\bin\Debug\Capa_Vista_Asignacion.dll</HintPath>
+    </Reference>
     <Reference Include="Capa_Vista_Banrural">
       <HintPath>..\..\DLLS_Migracion_G1\Banrural_Paula\Banrural_MVC\Capa_Vista_Banrural\bin\Debug\Capa_Vista_Banrural.dll</HintPath>
     </Reference>
