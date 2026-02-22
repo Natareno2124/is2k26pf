@@ -80,5 +80,13 @@ namespace Capa_Vista_Migracion
             estado.Show();
 
         }
+
+        //Sergio Izeppi 21/02/2026
+        private void tipoPasaporteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        //    Capa_Vista_Tipo_Pasaporte.Frm_Tipo_Pasaporte tipo_pasaporte = new Capa_Vista_Tipo_Pasaporte.Frm_Tipo_Pasaporte();
+        //    tipo_pasaporte.MdiParent = this;
+        //    tipo_pasaporte.Show();
+        }
     }
 }
