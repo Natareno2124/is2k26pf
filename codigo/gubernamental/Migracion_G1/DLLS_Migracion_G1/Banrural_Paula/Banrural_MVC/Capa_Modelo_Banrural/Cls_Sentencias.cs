@@ -1,59 +1,154 @@
 ﻿using System;
 using System.Data;
 using System.Data.Odbc;
-using Capa_Modelo_Seguridad;  // Paula Daniela Leonardo Paredes 0901-22-9580
+using Capa_Modelo_Seguridad;  // Referencia a la capa de seguridad
 
 namespace Capa_Modelo_Banrural // Paula Daniela Leonardo Paredes 0901-22-9580
 {
     public class Cls_Sentencias
     {
         // Instancia de la conexión de seguridad
-        Cls_Conexion conexion = new Cls_Conexion();
+        private readonly Cls_Conexion conexion = new Cls_Conexion();
 
         // ===============================
-        // MÉTODO PARA INSERTAR
+        // 1) BUSCAR CIUDADANO POR DPI
         // ===============================
-        public void Insertar(string consulta)
+        public DataTable BuscarCiudadanoPorDpi(long dpi)
         {
-            OdbcConnection conn = conexion.conexion();
-            OdbcCommand cmd = new OdbcCommand(consulta, conn);
-            cmd.ExecuteNonQuery();
-            conexion.desconexion(conn);
+            string sql = @"
+                SELECT 
+                    Pk_Id_Ciudadano,
+                    Cmp_Dpi_Ciudadano,
+                    Cmp_Nombres_Ciudadano,
+                    Cmp_Apellidos_Ciudadano,
+                    Cmp_Fecha_Nacimiento_Ciudadano
+                FROM Tbl_Ciudadano
+                WHERE Cmp_Dpi_Ciudadano = ?;";
+
+            using (OdbcConnection conn = conexion.conexion())
+            using (OdbcCommand cmd = new OdbcCommand(sql, conn))
+            {
+                cmd.Parameters.Add("dpi", OdbcType.BigInt).Value = dpi;
+
+                using (OdbcDataAdapter da = new OdbcDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
         }
 
         // ===============================
-        // MÉTODO PARA CONSULTAR (SELECT)
+        // 2) OBTENER TIPOS DE PASAPORTE (COMBO)
         // ===============================
-        public DataTable Consultar(string consulta)
+        public DataTable ObtenerTiposPasaporte()
         {
-            OdbcConnection conn = conexion.conexion();
-            OdbcDataAdapter adaptador = new OdbcDataAdapter(consulta, conn);
-            DataTable tabla = new DataTable();
-            adaptador.Fill(tabla);
-            conexion.desconexion(conn);
-            return tabla;
+            string sql = @"
+                SELECT 
+                    Pk_Id_Tipo_Pasaporte,
+                    Cmp_Tipo_Pasaporte
+                FROM Tbl_Tipo_Pasaporte
+                ORDER BY Cmp_Tipo_Pasaporte;";
+
+            using (OdbcConnection conn = conexion.conexion())
+            using (OdbcDataAdapter da = new OdbcDataAdapter(sql, conn))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
         }
 
         // ===============================
-        // MÉTODO PARA ACTUALIZAR
+        // 3) OBTENER DURACIÓN POR TIPO (COMBO)
+        // OJO: según tu tabla, duración está en Tbl_Tipo_Pasaporte.
+        // Si solo hay 1 fila por tipo, este combo mostrará solo 1 valor.
         // ===============================
-        public void Actualizar(string consulta)
+        public DataTable ObtenerDuracionesPorTipo(int idTipoPasaporte)
         {
-            OdbcConnection conn = conexion.conexion();
-            OdbcCommand cmd = new OdbcCommand(consulta, conn);
-            cmd.ExecuteNonQuery();
-            conexion.desconexion(conn);
+            string sql = @"
+                SELECT DISTINCT Cmp_Duracion_Pasaporte
+                FROM Tbl_Tipo_Pasaporte
+                WHERE Pk_Id_Tipo_Pasaporte = ?
+                ORDER BY Cmp_Duracion_Pasaporte;";
+
+            using (OdbcConnection conn = conexion.conexion())
+            using (OdbcCommand cmd = new OdbcCommand(sql, conn))
+            {
+                cmd.Parameters.Add("idTipo", OdbcType.Int).Value = idTipoPasaporte;
+
+                using (OdbcDataAdapter da = new OdbcDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
         }
 
         // ===============================
-        // MÉTODO PARA ELIMINAR
+        // 4) OBTENER PRECIO POR TIPO
         // ===============================
-        public void Eliminar(string consulta)
+        public decimal ObtenerPrecioPorTipo(int idTipoPasaporte)
         {
-            OdbcConnection conn = conexion.conexion();
-            OdbcCommand cmd = new OdbcCommand(consulta, conn);
-            cmd.ExecuteNonQuery();
-            conexion.desconexion(conn);
+            string sql = @"
+                SELECT Precio
+                FROM Tbl_Tipo_Pasaporte
+                WHERE Pk_Id_Tipo_Pasaporte = ?;";
+
+            using (OdbcConnection conn = conexion.conexion())
+            using (OdbcCommand cmd = new OdbcCommand(sql, conn))
+            {
+                cmd.Parameters.Add("idTipo", OdbcType.Int).Value = idTipoPasaporte;
+
+                object result = cmd.ExecuteScalar();
+                if (result == null || result == DBNull.Value) return 0m;
+
+                return Convert.ToDecimal(result);
+            }
+        }
+
+        // ===============================
+        // 5) INSERTAR BOLETA (GUARDAR PAGO)
+        // ===============================
+        public int InsertarBoleta(int numeroBoleta, int idCiudadano, int idTipoPasaporte)
+        {
+            string sql = @"
+                INSERT INTO Tbl_Generar_Boleta
+                    (Cmp_Numero_Boleta, Fk_Id_Ciudadano, Fk_Id_Tipo_Pasaporte)
+                VALUES (?, ?, ?);";
+
+            using (OdbcConnection conn = conexion.conexion())
+            using (OdbcCommand cmd = new OdbcCommand(sql, conn))
+            {
+                cmd.Parameters.Add("noBoleta", OdbcType.Int).Value = numeroBoleta;
+                cmd.Parameters.Add("idCiudadano", OdbcType.Int).Value = idCiudadano;
+                cmd.Parameters.Add("idTipo", OdbcType.Int).Value = idTipoPasaporte;
+
+                return cmd.ExecuteNonQuery(); // 1 si insertó bien
+            }
+        }
+
+        // ===============================
+        // 6) VALIDAR SI YA EXISTE NÚMERO DE BOLETA
+        // (para que el random sea único)
+        // ===============================
+        public bool ExisteNumeroBoleta(int numeroBoleta)
+        {
+            string sql = @"
+                SELECT COUNT(*)
+                FROM Tbl_Generar_Boleta
+                WHERE Cmp_Numero_Boleta = ?;";
+
+            using (OdbcConnection conn = conexion.conexion())
+            using (OdbcCommand cmd = new OdbcCommand(sql, conn))
+            {
+                cmd.Parameters.Add("noBoleta", OdbcType.Int).Value = numeroBoleta;
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                return count > 0;
+            }
         }
     }
 }
