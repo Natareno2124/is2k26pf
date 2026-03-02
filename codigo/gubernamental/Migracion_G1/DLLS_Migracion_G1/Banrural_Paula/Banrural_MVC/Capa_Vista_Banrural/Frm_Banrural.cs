@@ -32,16 +32,27 @@ namespace Capa_Vista_Banrural //Paula Daniela Leonardo Paredes 0901-22-9580
 
         private void Frm_Banrural_Load(object sender, EventArgs e)
         {
+            // Bloquear campos que se llenan automáticamente
+            Txt_Nombres.ReadOnly = true;
+            Txt_Apellidos.ReadOnly = true;
+            Txt_Edad.ReadOnly = true;
+            Txt_NoBoleta.ReadOnly = true;
+            Txt_TotalPagar.ReadOnly = true;
+
             // Mayúsculas automático
             Txt_Nombres.CharacterCasing = CharacterCasing.Upper;
             Txt_Apellidos.CharacterCasing = CharacterCasing.Upper;
 
-            // Cargar tipos de pasaporte al iniciar
+            // Cargar tipos de pasaporte
             DataTable tipos = ctrl.ObtenerTiposPasaporte();
             Cmb_TipoPasaporte.DisplayMember = "Cmp_Tipo_Pasaporte";
             Cmb_TipoPasaporte.ValueMember = "Pk_Id_Tipo_Pasaporte";
             Cmb_TipoPasaporte.DataSource = tipos;
 
+            // Dejar sin selección al inicio
+            Cmb_TipoPasaporte.SelectedIndex = -1;
+
+            // Duración vacía al inicio
             Cmb_Duracion.DataSource = null;
         }
 

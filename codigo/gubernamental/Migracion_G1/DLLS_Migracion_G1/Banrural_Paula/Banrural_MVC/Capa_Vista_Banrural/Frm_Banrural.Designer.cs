@@ -281,7 +281,7 @@ namespace Capa_Vista_Banrural
             // Cmb_Duracion
             // 
             this.Cmb_Duracion.FormattingEnabled = true;
-            this.Cmb_Duracion.Location = new System.Drawing.Point(705, 446);
+            this.Cmb_Duracion.Location = new System.Drawing.Point(733, 446);
             this.Cmb_Duracion.Name = "Cmb_Duracion";
             this.Cmb_Duracion.Size = new System.Drawing.Size(329, 24);
             this.Cmb_Duracion.TabIndex = 21;
@@ -291,11 +291,11 @@ namespace Capa_Vista_Banrural
             // 
             this.Lbl_Duracion.AutoSize = true;
             this.Lbl_Duracion.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Duracion.Location = new System.Drawing.Point(602, 446);
+            this.Lbl_Duracion.Location = new System.Drawing.Point(585, 446);
             this.Lbl_Duracion.Name = "Lbl_Duracion";
-            this.Lbl_Duracion.Size = new System.Drawing.Size(86, 20);
+            this.Lbl_Duracion.Size = new System.Drawing.Size(142, 20);
             this.Lbl_Duracion.TabIndex = 20;
-            this.Lbl_Duracion.Text = "Duración:";
+            this.Lbl_Duracion.Text = "Duración (Años):";
             this.Lbl_Duracion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Lbl_TotalPagar
@@ -317,7 +317,7 @@ namespace Capa_Vista_Banrural
             this.Txt_TotalPagar.Font = new System.Drawing.Font("Rockwell", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_TotalPagar.Location = new System.Drawing.Point(199, 512);
             this.Txt_TotalPagar.Name = "Txt_TotalPagar";
-            this.Txt_TotalPagar.Size = new System.Drawing.Size(835, 29);
+            this.Txt_TotalPagar.Size = new System.Drawing.Size(863, 29);
             this.Txt_TotalPagar.TabIndex = 23;
             this.Txt_TotalPagar.TextChanged += new System.EventHandler(this.Txt_TotalPagar_TextChanged);
             // 
