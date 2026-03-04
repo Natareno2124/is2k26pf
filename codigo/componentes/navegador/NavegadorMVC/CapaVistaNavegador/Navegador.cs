@@ -67,7 +67,7 @@ namespace Capa_Vista_Navegador
                     Cls_ControladorNavegador controladorNavegador = new Cls_ControladorNavegador();
 
                     // Genera dinámicamente los labels y combos
-                    controladorNavegador.AsignarAlias(SAlias, this, 20, 100, 3, SEtiquetas);
+                    controladorNavegador.AsignarAlias(SAlias, this, 20, 100, SEtiquetas);
                     ctrl.DesactivarTodosComboBoxes(this); // KEVIN NATARENO, 11/10/2025
                 }
                 catch (Exception ex)
@@ -91,6 +91,10 @@ namespace Capa_Vista_Navegador
             
             Btn_ingresar.Enabled = false;
             Btn_guardar.Enabled = true;
+            Btn_modificar.Enabled = false;
+            Btn_eliminar.Enabled = false;
+            Btn_imprimir.Enabled = false;
+            Btn_consultar.Enabled = false;
             Btn_cancelar.Enabled = true;
             mostrarDatos();
             ctrl.ActivarTodosComboBoxes(this);
@@ -279,6 +283,7 @@ namespace Capa_Vista_Navegador
             ctrl.LimpiarCombos(this, SAlias);
             ctrl.DesactivarTodosComboBoxes(this);
             iContadorModificar = 0;
+
 
         }
 
