@@ -39,12 +39,12 @@ namespace Capa_Vista_Antecedentes
             this.Lbl_Descripcion = new System.Windows.Forms.Label();
             this.Lbl_Ciudadano = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Lbl_Titulo = new System.Windows.Forms.Label();
             this.Cbo_Estado = new System.Windows.Forms.ComboBox();
             this.Lbl_Buscar = new System.Windows.Forms.Label();
             this.Cbo_Buscar = new System.Windows.Forms.ComboBox();
             this.Btn_Buscar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Btn_Refrescar = new System.Windows.Forms.Button();
             this.Btn_Salir = new System.Windows.Forms.Button();
             this.Btn_Modificar = new System.Windows.Forms.Button();
@@ -159,6 +159,20 @@ namespace Capa_Vista_Antecedentes
             this.panel1.TabIndex = 23;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Capa_Vista_Antecedentes.Properties.Resources.CrossWay_Logo_Blanco;
+            this.pictureBox1.Location = new System.Drawing.Point(-48, -41);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(382, 170);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
             // Lbl_Titulo
             // 
             this.Lbl_Titulo.AutoSize = true;
@@ -218,26 +232,12 @@ namespace Capa_Vista_Antecedentes
             this.Btn_Buscar.UseVisualStyleBackColor = true;
             this.Btn_Buscar.Click += new System.EventHandler(this.Btn_Buscar_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Capa_Vista_Antecedentes.Properties.Resources.CrossWay_Logo_Blanco;
-            this.pictureBox1.Location = new System.Drawing.Point(-48, -50);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(382, 170);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
-            // 
             // Btn_Refrescar
             // 
             this.Btn_Refrescar.BackgroundImage = global::Capa_Vista_Antecedentes.Properties.Resources.refrescar;
             this.Btn_Refrescar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Btn_Refrescar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Refrescar.Location = new System.Drawing.Point(851, 12);
+            this.Btn_Refrescar.Location = new System.Drawing.Point(701, 12);
             this.Btn_Refrescar.Name = "Btn_Refrescar";
             this.Btn_Refrescar.Size = new System.Drawing.Size(49, 48);
             this.Btn_Refrescar.TabIndex = 20;
@@ -249,7 +249,7 @@ namespace Capa_Vista_Antecedentes
             this.Btn_Salir.BackgroundImage = global::Capa_Vista_Antecedentes.Properties.Resources.salir;
             this.Btn_Salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Btn_Salir.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Salir.Location = new System.Drawing.Point(1016, 12);
+            this.Btn_Salir.Location = new System.Drawing.Point(866, 12);
             this.Btn_Salir.Name = "Btn_Salir";
             this.Btn_Salir.Size = new System.Drawing.Size(49, 48);
             this.Btn_Salir.TabIndex = 19;
@@ -261,7 +261,7 @@ namespace Capa_Vista_Antecedentes
             this.Btn_Modificar.BackgroundImage = global::Capa_Vista_Antecedentes.Properties.Resources.modificar;
             this.Btn_Modificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Btn_Modificar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Modificar.Location = new System.Drawing.Point(741, 12);
+            this.Btn_Modificar.Location = new System.Drawing.Point(591, 12);
             this.Btn_Modificar.Name = "Btn_Modificar";
             this.Btn_Modificar.Size = new System.Drawing.Size(49, 48);
             this.Btn_Modificar.TabIndex = 18;
@@ -273,7 +273,7 @@ namespace Capa_Vista_Antecedentes
             this.Btn_Imprimir.BackgroundImage = global::Capa_Vista_Antecedentes.Properties.Resources.imprimir;
             this.Btn_Imprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Btn_Imprimir.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Imprimir.Location = new System.Drawing.Point(906, 12);
+            this.Btn_Imprimir.Location = new System.Drawing.Point(756, 12);
             this.Btn_Imprimir.Name = "Btn_Imprimir";
             this.Btn_Imprimir.Size = new System.Drawing.Size(49, 48);
             this.Btn_Imprimir.TabIndex = 5;
@@ -285,7 +285,7 @@ namespace Capa_Vista_Antecedentes
             this.Btn_Eliminar.BackgroundImage = global::Capa_Vista_Antecedentes.Properties.Resources.eliminar;
             this.Btn_Eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Btn_Eliminar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Eliminar.Location = new System.Drawing.Point(796, 12);
+            this.Btn_Eliminar.Location = new System.Drawing.Point(646, 12);
             this.Btn_Eliminar.Name = "Btn_Eliminar";
             this.Btn_Eliminar.Size = new System.Drawing.Size(49, 48);
             this.Btn_Eliminar.TabIndex = 4;
@@ -297,7 +297,7 @@ namespace Capa_Vista_Antecedentes
             this.Btn_Cancelar.BackgroundImage = global::Capa_Vista_Antecedentes.Properties.Resources.cancelar;
             this.Btn_Cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Btn_Cancelar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Cancelar.Location = new System.Drawing.Point(961, 12);
+            this.Btn_Cancelar.Location = new System.Drawing.Point(811, 12);
             this.Btn_Cancelar.Name = "Btn_Cancelar";
             this.Btn_Cancelar.Size = new System.Drawing.Size(49, 48);
             this.Btn_Cancelar.TabIndex = 3;
@@ -309,7 +309,7 @@ namespace Capa_Vista_Antecedentes
             this.Btn_Agregar.BackgroundImage = global::Capa_Vista_Antecedentes.Properties.Resources.agregar;
             this.Btn_Agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Btn_Agregar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Agregar.Location = new System.Drawing.Point(631, 12);
+            this.Btn_Agregar.Location = new System.Drawing.Point(481, 12);
             this.Btn_Agregar.Name = "Btn_Agregar";
             this.Btn_Agregar.Size = new System.Drawing.Size(49, 48);
             this.Btn_Agregar.TabIndex = 2;
@@ -321,7 +321,7 @@ namespace Capa_Vista_Antecedentes
             this.Btn_Guardar.BackgroundImage = global::Capa_Vista_Antecedentes.Properties.Resources.guardar;
             this.Btn_Guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Btn_Guardar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Guardar.Location = new System.Drawing.Point(686, 12);
+            this.Btn_Guardar.Location = new System.Drawing.Point(536, 12);
             this.Btn_Guardar.Name = "Btn_Guardar";
             this.Btn_Guardar.Size = new System.Drawing.Size(49, 48);
             this.Btn_Guardar.TabIndex = 1;
@@ -334,7 +334,7 @@ namespace Capa_Vista_Antecedentes
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1069, 450);
+            this.ClientSize = new System.Drawing.Size(934, 391);
             this.Controls.Add(this.Btn_Buscar);
             this.Controls.Add(this.Cbo_Buscar);
             this.Controls.Add(this.Lbl_Buscar);

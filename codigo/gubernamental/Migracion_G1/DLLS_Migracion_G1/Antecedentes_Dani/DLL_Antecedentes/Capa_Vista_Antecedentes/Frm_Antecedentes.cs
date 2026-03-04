@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Capa_Controlador;
-using Capa_Vista_Migracion;
 using System.Data.Odbc;
 
 namespace Capa_Vista_Antecedentes
@@ -60,9 +59,6 @@ namespace Capa_Vista_Antecedentes
 
         private void Btn_Salir_Click(object sender, EventArgs e)
         {
-            Capa_Vista_Migracion.Frm_MDI_Migracion formularioDestino = new Capa_Vista_Migracion.Frm_MDI_Migracion();
-            // Lo mostramos
-            formularioDestino.Show();
             this.Hide();
         }
 
