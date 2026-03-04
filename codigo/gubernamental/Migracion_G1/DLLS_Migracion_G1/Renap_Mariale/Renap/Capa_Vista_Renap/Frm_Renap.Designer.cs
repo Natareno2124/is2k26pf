@@ -36,30 +36,30 @@ namespace Capa_Vista_Renap
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Lbl_Datos = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_nombres = new System.Windows.Forms.TextBox();
+            this.txt_apellidos = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rdb_femenino = new System.Windows.Forms.RadioButton();
+            this.rdb_masculino = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
+            this.txt_lugarnac = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_nacionalidad = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_dpi = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btn_guardar = new System.Windows.Forms.Button();
+            this.btn_buscar = new System.Windows.Forms.Button();
+            this.dgv_renap = new System.Windows.Forms.DataGridView();
+            this.btn_modificar = new System.Windows.Forms.Button();
+            this.btn_eliminar = new System.Windows.Forms.Button();
+            this.btn_ayudas = new System.Windows.Forms.Button();
+            this.btn_salir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_renap)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -120,23 +120,23 @@ namespace Capa_Vista_Renap
             this.Lbl_Datos.TabIndex = 5;
             this.Lbl_Datos.Text = "DATOS DEL CIUDADANO:";
             // 
-            // textBox1
+            // txt_nombres
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(107, 195);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(297, 27);
-            this.textBox1.TabIndex = 6;
+            this.txt_nombres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_nombres.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nombres.Location = new System.Drawing.Point(107, 195);
+            this.txt_nombres.Name = "txt_nombres";
+            this.txt_nombres.Size = new System.Drawing.Size(297, 27);
+            this.txt_nombres.TabIndex = 6;
             // 
-            // textBox2
+            // txt_apellidos
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(533, 195);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(297, 27);
-            this.textBox2.TabIndex = 8;
+            this.txt_apellidos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_apellidos.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_apellidos.Location = new System.Drawing.Point(533, 195);
+            this.txt_apellidos.Name = "txt_apellidos";
+            this.txt_apellidos.Size = new System.Drawing.Size(297, 27);
+            this.txt_apellidos.TabIndex = 8;
             // 
             // label3
             // 
@@ -158,29 +158,29 @@ namespace Capa_Vista_Renap
             this.label4.TabIndex = 9;
             this.label4.Text = "Sexo:";
             // 
-            // radioButton1
+            // rdb_femenino
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(935, 195);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(39, 24);
-            this.radioButton1.TabIndex = 12;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "F";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdb_femenino.AutoSize = true;
+            this.rdb_femenino.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_femenino.Location = new System.Drawing.Point(935, 195);
+            this.rdb_femenino.Name = "rdb_femenino";
+            this.rdb_femenino.Size = new System.Drawing.Size(39, 24);
+            this.rdb_femenino.TabIndex = 12;
+            this.rdb_femenino.TabStop = true;
+            this.rdb_femenino.Text = "F";
+            this.rdb_femenino.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdb_masculino
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(999, 195);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(45, 24);
-            this.radioButton2.TabIndex = 13;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "M";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdb_masculino.AutoSize = true;
+            this.rdb_masculino.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_masculino.Location = new System.Drawing.Point(999, 195);
+            this.rdb_masculino.Name = "rdb_masculino";
+            this.rdb_masculino.Size = new System.Drawing.Size(45, 24);
+            this.rdb_masculino.TabIndex = 13;
+            this.rdb_masculino.TabStop = true;
+            this.rdb_masculino.Text = "M";
+            this.rdb_masculino.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -192,23 +192,23 @@ namespace Capa_Vista_Renap
             this.label5.TabIndex = 14;
             this.label5.Text = "Fecha de nacimiento:";
             // 
-            // dateTimePicker1
+            // dtp_fecha
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(210, 255);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(314, 27);
-            this.dateTimePicker1.TabIndex = 16;
+            this.dtp_fecha.CalendarFont = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_fecha.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_fecha.Location = new System.Drawing.Point(210, 255);
+            this.dtp_fecha.Name = "dtp_fecha";
+            this.dtp_fecha.Size = new System.Drawing.Size(314, 27);
+            this.dtp_fecha.TabIndex = 16;
             // 
-            // textBox3
+            // txt_lugarnac
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(740, 258);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(304, 27);
-            this.textBox3.TabIndex = 18;
+            this.txt_lugarnac.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_lugarnac.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_lugarnac.Location = new System.Drawing.Point(740, 258);
+            this.txt_lugarnac.Name = "txt_lugarnac";
+            this.txt_lugarnac.Size = new System.Drawing.Size(304, 27);
+            this.txt_lugarnac.TabIndex = 18;
             // 
             // label6
             // 
@@ -220,14 +220,14 @@ namespace Capa_Vista_Renap
             this.label6.TabIndex = 17;
             this.label6.Text = "Lugar de nacimiento:";
             // 
-            // textBox4
+            // txt_nacionalidad
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(149, 317);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(255, 27);
-            this.textBox4.TabIndex = 20;
+            this.txt_nacionalidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_nacionalidad.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nacionalidad.Location = new System.Drawing.Point(149, 317);
+            this.txt_nacionalidad.Name = "txt_nacionalidad";
+            this.txt_nacionalidad.Size = new System.Drawing.Size(255, 27);
+            this.txt_nacionalidad.TabIndex = 20;
             // 
             // label7
             // 
@@ -239,14 +239,14 @@ namespace Capa_Vista_Renap
             this.label7.TabIndex = 19;
             this.label7.Text = "Nacionalidad:";
             // 
-            // textBox5
+            // txt_dpi
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(791, 317);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(253, 27);
-            this.textBox5.TabIndex = 22;
+            this.txt_dpi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_dpi.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_dpi.Location = new System.Drawing.Point(791, 317);
+            this.txt_dpi.Name = "txt_dpi";
+            this.txt_dpi.Size = new System.Drawing.Size(253, 27);
+            this.txt_dpi.TabIndex = 22;
             // 
             // label8
             // 
@@ -266,81 +266,87 @@ namespace Capa_Vista_Renap
             this.panel2.Size = new System.Drawing.Size(1041, 39);
             this.panel2.TabIndex = 2;
             // 
-            // button1
+            // btn_guardar
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.ForeColor = System.Drawing.Color.Goldenrod;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(781, 366);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 47);
-            this.button1.TabIndex = 23;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_guardar.BackColor = System.Drawing.Color.White;
+            this.btn_guardar.ForeColor = System.Drawing.Color.Goldenrod;
+            this.btn_guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_guardar.Image")));
+            this.btn_guardar.Location = new System.Drawing.Point(781, 366);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(60, 47);
+            this.btn_guardar.TabIndex = 23;
+            this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click_1);
             // 
-            // button2
+            // btn_buscar
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.ForeColor = System.Drawing.Color.Goldenrod;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(979, 366);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 47);
-            this.button2.TabIndex = 24;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_buscar.BackColor = System.Drawing.Color.White;
+            this.btn_buscar.ForeColor = System.Drawing.Color.Goldenrod;
+            this.btn_buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar.Image")));
+            this.btn_buscar.Location = new System.Drawing.Point(979, 366);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(60, 47);
+            this.btn_buscar.TabIndex = 24;
+            this.btn_buscar.UseVisualStyleBackColor = false;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
-            // dataGridView1
+            // dgv_renap
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 429);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1037, 197);
-            this.dataGridView1.TabIndex = 25;
+            this.dgv_renap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_renap.Location = new System.Drawing.Point(16, 429);
+            this.dgv_renap.Name = "dgv_renap";
+            this.dgv_renap.RowHeadersWidth = 51;
+            this.dgv_renap.RowTemplate.Height = 24;
+            this.dgv_renap.Size = new System.Drawing.Size(1037, 197);
+            this.dgv_renap.TabIndex = 25;
+            this.dgv_renap.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_renap_CellContentClick);
             // 
-            // button3
+            // btn_modificar
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.ForeColor = System.Drawing.Color.Goldenrod;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(847, 366);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(60, 47);
-            this.button3.TabIndex = 26;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_modificar.BackColor = System.Drawing.Color.White;
+            this.btn_modificar.ForeColor = System.Drawing.Color.Goldenrod;
+            this.btn_modificar.Image = ((System.Drawing.Image)(resources.GetObject("btn_modificar.Image")));
+            this.btn_modificar.Location = new System.Drawing.Point(847, 366);
+            this.btn_modificar.Name = "btn_modificar";
+            this.btn_modificar.Size = new System.Drawing.Size(60, 47);
+            this.btn_modificar.TabIndex = 26;
+            this.btn_modificar.UseVisualStyleBackColor = false;
+            this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
             // 
-            // button4
+            // btn_eliminar
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.ForeColor = System.Drawing.Color.Goldenrod;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(913, 366);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(60, 47);
-            this.button4.TabIndex = 27;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btn_eliminar.BackColor = System.Drawing.Color.White;
+            this.btn_eliminar.ForeColor = System.Drawing.Color.Goldenrod;
+            this.btn_eliminar.Image = ((System.Drawing.Image)(resources.GetObject("btn_eliminar.Image")));
+            this.btn_eliminar.Location = new System.Drawing.Point(913, 366);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(60, 47);
+            this.btn_eliminar.TabIndex = 27;
+            this.btn_eliminar.UseVisualStyleBackColor = false;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
-            // button5
+            // btn_ayudas
             // 
-            this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.ForeColor = System.Drawing.Color.Goldenrod;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(918, 24);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(60, 47);
-            this.button5.TabIndex = 28;
-            this.button5.UseVisualStyleBackColor = false;
+            this.btn_ayudas.BackColor = System.Drawing.Color.White;
+            this.btn_ayudas.ForeColor = System.Drawing.Color.Goldenrod;
+            this.btn_ayudas.Image = ((System.Drawing.Image)(resources.GetObject("btn_ayudas.Image")));
+            this.btn_ayudas.Location = new System.Drawing.Point(918, 24);
+            this.btn_ayudas.Name = "btn_ayudas";
+            this.btn_ayudas.Size = new System.Drawing.Size(60, 47);
+            this.btn_ayudas.TabIndex = 28;
+            this.btn_ayudas.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btn_salir
             // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.ForeColor = System.Drawing.Color.Goldenrod;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(984, 24);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(60, 47);
-            this.button6.TabIndex = 29;
-            this.button6.UseVisualStyleBackColor = false;
+            this.btn_salir.BackColor = System.Drawing.Color.White;
+            this.btn_salir.ForeColor = System.Drawing.Color.Goldenrod;
+            this.btn_salir.Image = ((System.Drawing.Image)(resources.GetObject("btn_salir.Image")));
+            this.btn_salir.Location = new System.Drawing.Point(984, 24);
+            this.btn_salir.Name = "btn_salir";
+            this.btn_salir.Size = new System.Drawing.Size(60, 47);
+            this.btn_salir.TabIndex = 29;
+            this.btn_salir.UseVisualStyleBackColor = false;
+            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
             // Frm_Renap
             // 
@@ -348,28 +354,28 @@ namespace Capa_Vista_Renap
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1065, 692);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_salir);
+            this.Controls.Add(this.btn_ayudas);
+            this.Controls.Add(this.btn_eliminar);
+            this.Controls.Add(this.btn_modificar);
+            this.Controls.Add(this.dgv_renap);
+            this.Controls.Add(this.btn_buscar);
+            this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txt_dpi);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txt_nacionalidad);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txt_lugarnac);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtp_fecha);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rdb_masculino);
+            this.Controls.Add(this.rdb_femenino);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txt_apellidos);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_nombres);
             this.Controls.Add(this.Lbl_Datos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -379,7 +385,7 @@ namespace Capa_Vista_Renap
             this.Name = "Frm_Renap";
             this.Text = "Frm_Renap";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_renap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -393,27 +399,27 @@ namespace Capa_Vista_Renap
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Lbl_Datos;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_nombres;
+        private System.Windows.Forms.TextBox txt_apellidos;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rdb_femenino;
+        private System.Windows.Forms.RadioButton rdb_masculino;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.DateTimePicker dtp_fecha;
+        private System.Windows.Forms.TextBox txt_lugarnac;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_nacionalidad;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_dpi;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btn_guardar;
+        private System.Windows.Forms.Button btn_buscar;
+        private System.Windows.Forms.DataGridView dgv_renap;
+        private System.Windows.Forms.Button btn_modificar;
+        private System.Windows.Forms.Button btn_eliminar;
+        private System.Windows.Forms.Button btn_ayudas;
+        private System.Windows.Forms.Button btn_salir;
     }
 }
