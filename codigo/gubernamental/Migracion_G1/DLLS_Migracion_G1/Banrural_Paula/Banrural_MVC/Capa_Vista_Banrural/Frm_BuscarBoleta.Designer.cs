@@ -209,6 +209,7 @@ namespace Capa_Vista_Banrural
             this.Btn_LimpiarTodo.Size = new System.Drawing.Size(60, 51);
             this.Btn_LimpiarTodo.TabIndex = 34;
             this.Btn_LimpiarTodo.UseVisualStyleBackColor = true;
+            this.Btn_LimpiarTodo.Click += new System.EventHandler(this.Btn_LimpiarTodo_Click);
             // 
             // Btn_EliminarBoleta
             // 

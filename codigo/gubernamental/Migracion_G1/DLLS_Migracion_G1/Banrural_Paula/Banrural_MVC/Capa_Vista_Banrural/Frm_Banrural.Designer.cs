@@ -55,7 +55,6 @@ namespace Capa_Vista_Banrural
             this.Lbl_TotalPagar = new System.Windows.Forms.Label();
             this.Txt_TotalPagar = new System.Windows.Forms.TextBox();
             this.Btn_Guardar = new System.Windows.Forms.Button();
-            this.Btn_Imprimir = new System.Windows.Forms.Button();
             this.Btn_Buscar = new System.Windows.Forms.Button();
             this.Btn_BuscarDpi = new System.Windows.Forms.Button();
             this.Btn_LimpiarTodo = new System.Windows.Forms.Button();
@@ -330,29 +329,18 @@ namespace Capa_Vista_Banrural
             this.Btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Guardar.Image")));
             this.Btn_Guardar.Location = new System.Drawing.Point(266, 610);
             this.Btn_Guardar.Name = "Btn_Guardar";
-            this.Btn_Guardar.Size = new System.Drawing.Size(200, 47);
+            this.Btn_Guardar.Size = new System.Drawing.Size(250, 47);
             this.Btn_Guardar.TabIndex = 24;
             this.Btn_Guardar.UseVisualStyleBackColor = true;
             this.Btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
-            // 
-            // Btn_Imprimir
-            // 
-            this.Btn_Imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_Imprimir.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Imprimir.Image")));
-            this.Btn_Imprimir.Location = new System.Drawing.Point(472, 610);
-            this.Btn_Imprimir.Name = "Btn_Imprimir";
-            this.Btn_Imprimir.Size = new System.Drawing.Size(200, 47);
-            this.Btn_Imprimir.TabIndex = 25;
-            this.Btn_Imprimir.UseVisualStyleBackColor = true;
-            this.Btn_Imprimir.Click += new System.EventHandler(this.Btn_Imprimir_Click);
             // 
             // Btn_Buscar
             // 
             this.Btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Buscar.Image")));
-            this.Btn_Buscar.Location = new System.Drawing.Point(678, 610);
+            this.Btn_Buscar.Location = new System.Drawing.Point(522, 610);
             this.Btn_Buscar.Name = "Btn_Buscar";
-            this.Btn_Buscar.Size = new System.Drawing.Size(200, 47);
+            this.Btn_Buscar.Size = new System.Drawing.Size(250, 47);
             this.Btn_Buscar.TabIndex = 26;
             this.Btn_Buscar.UseVisualStyleBackColor = true;
             this.Btn_Buscar.Click += new System.EventHandler(this.Btn_Buscar_Click);
@@ -388,7 +376,6 @@ namespace Capa_Vista_Banrural
             this.Controls.Add(this.Btn_LimpiarTodo);
             this.Controls.Add(this.Btn_BuscarDpi);
             this.Controls.Add(this.Btn_Buscar);
-            this.Controls.Add(this.Btn_Imprimir);
             this.Controls.Add(this.Btn_Guardar);
             this.Controls.Add(this.Txt_TotalPagar);
             this.Controls.Add(this.Lbl_TotalPagar);
@@ -451,7 +438,6 @@ namespace Capa_Vista_Banrural
         private System.Windows.Forms.Label Lbl_TotalPagar;
         private System.Windows.Forms.TextBox Txt_TotalPagar;
         private System.Windows.Forms.Button Btn_Guardar;
-        private System.Windows.Forms.Button Btn_Imprimir;
         private System.Windows.Forms.Button Btn_Buscar;
         private System.Windows.Forms.Button Btn_BuscarDpi;
         private System.Windows.Forms.Button Btn_LimpiarTodo;

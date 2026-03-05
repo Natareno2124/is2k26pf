@@ -138,7 +138,7 @@ namespace Capa_Modelo_Banrural //Paula Leonardo 0901-22-9580
             }
         }
 
-        // 7) OBTENER ID REAL SEGÚN TIPO + DURACIÓN
+        // 7. OBTENER ID REAL SEGÚN TIPO + DURACIÓN
         public int ObtenerIdTipoPasaporte(string tipoPasaporte, int duracion)
         {
             const string sql = @"
@@ -159,6 +159,170 @@ namespace Capa_Modelo_Banrural //Paula Leonardo 0901-22-9580
                     return 0;
 
                 return Convert.ToInt32(result);
+            }
+        }
+
+        // 8. OBTENER BOLETAS POR CIUDADANO (Para DataGridView)
+        public DataTable ObtenerBoletasPorCiudadano(int idCiudadano)
+        {
+            const string sql = @"
+        SELECT 
+            b.Pk_Id_Boleta,
+            b.Cmp_Numero_Boleta,
+            tp.Cmp_Tipo_Pasaporte,
+            tp.Cmp_Duracion_Pasaporte,
+            tp.Precio
+        FROM Tbl_Generar_Boleta b
+        INNER JOIN Tbl_Tipo_Pasaporte tp
+            ON b.Fk_Id_Tipo_Pasaporte = tp.Pk_Id_Tipo_Pasaporte
+        WHERE b.Fk_Id_Ciudadano = ?
+        ORDER BY b.Pk_Id_Boleta DESC;";
+
+            using (OdbcConnection conn = conexion.conexion())
+            using (OdbcCommand cmd = new OdbcCommand(sql, conn))
+            {
+                cmd.Parameters.Add("idCiudadano", OdbcType.Int).Value = idCiudadano;
+
+                using (OdbcDataAdapter da = new OdbcDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+
+        // 8B) Obtener TODAS las boletas (con datos del ciudadano)
+        public DataTable ObtenerTodasLasBoletasConCiudadano()
+        {
+            const string sql = @"
+        SELECT 
+            b.Pk_Id_Boleta,
+            b.Cmp_Numero_Boleta,
+            c.Cmp_Dpi_Ciudadano,
+            c.Cmp_Nombres_Ciudadano,
+            c.Cmp_Apellidos_Ciudadano,
+            tp.Cmp_Tipo_Pasaporte,
+            tp.Cmp_Duracion_Pasaporte,
+            tp.Precio
+        FROM Tbl_Generar_Boleta b
+        INNER JOIN Tbl_Ciudadano c
+            ON c.Pk_Id_Ciudadano = b.Fk_Id_Ciudadano
+        INNER JOIN Tbl_Tipo_Pasaporte tp
+            ON tp.Pk_Id_Tipo_Pasaporte = b.Fk_Id_Tipo_Pasaporte
+        ORDER BY b.Pk_Id_Boleta DESC;";
+
+            using (OdbcConnection conn = conexion.conexion())
+            using (OdbcDataAdapter da = new OdbcDataAdapter(sql, conn))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
+        // 8C) Obtener boletas filtradas por DPI (para el botón Buscar)
+        public DataTable ObtenerBoletasPorDpi(long dpi)
+        {
+            const string sql = @"
+        SELECT 
+            b.Pk_Id_Boleta,
+            b.Cmp_Numero_Boleta,
+            c.Cmp_Dpi_Ciudadano,
+            c.Cmp_Nombres_Ciudadano,
+            c.Cmp_Apellidos_Ciudadano,
+            tp.Cmp_Tipo_Pasaporte,
+            tp.Cmp_Duracion_Pasaporte,
+            tp.Precio
+        FROM Tbl_Generar_Boleta b
+        INNER JOIN Tbl_Ciudadano c
+            ON c.Pk_Id_Ciudadano = b.Fk_Id_Ciudadano
+        INNER JOIN Tbl_Tipo_Pasaporte tp
+            ON tp.Pk_Id_Tipo_Pasaporte = b.Fk_Id_Tipo_Pasaporte
+        WHERE c.Cmp_Dpi_Ciudadano = ?
+        ORDER BY b.Pk_Id_Boleta DESC;";
+
+            using (OdbcConnection conn = conexion.conexion())
+            using (OdbcCommand cmd = new OdbcCommand(sql, conn))
+            {
+                cmd.Parameters.Add("dpi", OdbcType.BigInt).Value = dpi;
+
+                using (OdbcDataAdapter da = new OdbcDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+
+        // 9. ELIMINAR BOLETA
+        public int EliminarBoleta(int idBoleta)
+        {
+            const string sql = @"
+        DELETE FROM Tbl_Generar_Boleta
+        WHERE Pk_Id_Boleta = ?;";
+
+            using (OdbcConnection conn = conexion.conexion())
+            using (OdbcCommand cmd = new OdbcCommand(sql, conn))
+            {
+                cmd.Parameters.Add("idBoleta", OdbcType.Int).Value = idBoleta;
+
+                return cmd.ExecuteNonQuery();
+            }
+        }
+
+        // 10. ACTUALIZAR BOLETA
+        public int ActualizarBoleta(int idBoleta, int idTipoPasaporte)
+        {
+            const string sql = @"
+        UPDATE Tbl_Generar_Boleta
+        SET Fk_Id_Tipo_Pasaporte = ?
+        WHERE Pk_Id_Boleta = ?;";
+
+            using (OdbcConnection conn = conexion.conexion())
+            using (OdbcCommand cmd = new OdbcCommand(sql, conn))
+            {
+                cmd.Parameters.Add("idTipo", OdbcType.Int).Value = idTipoPasaporte;
+                cmd.Parameters.Add("idBoleta", OdbcType.Int).Value = idBoleta;
+
+                return cmd.ExecuteNonQuery();
+            }
+        }
+
+        // 11. OBTENER DETALLE DE BOLETA PARA EDITAR
+        public DataTable ObtenerBoletaPorId(int idBoleta)
+        {
+            const string sql = @"
+        SELECT 
+            b.Pk_Id_Boleta,
+            b.Cmp_Numero_Boleta,
+            c.Pk_Id_Ciudadano,
+            c.Cmp_Dpi_Ciudadano,
+            c.Cmp_Nombres_Ciudadano,
+            c.Cmp_Apellidos_Ciudadano,
+            c.Cmp_Fecha_Nacimiento_Ciudadano,
+            tp.Cmp_Tipo_Pasaporte,
+            tp.Cmp_Duracion_Pasaporte,
+            tp.Precio
+        FROM Tbl_Generar_Boleta b
+        INNER JOIN Tbl_Ciudadano c
+            ON c.Pk_Id_Ciudadano = b.Fk_Id_Ciudadano
+        INNER JOIN Tbl_Tipo_Pasaporte tp
+            ON tp.Pk_Id_Tipo_Pasaporte = b.Fk_Id_Tipo_Pasaporte
+        WHERE b.Pk_Id_Boleta = ?;";
+
+            using (OdbcConnection conn = conexion.conexion())
+            using (OdbcCommand cmd = new OdbcCommand(sql, conn))
+            {
+                cmd.Parameters.Add("idBoleta", OdbcType.Int).Value = idBoleta;
+
+                using (OdbcDataAdapter da = new OdbcDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
             }
         }
     }

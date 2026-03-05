@@ -11,6 +11,8 @@ namespace Capa_Vista_Banrural //Paula Leonardo 0901-22-9580
 
         // Para guardar el ciudadano encontrado
         private int _idCiudadano = 0;
+        private int _idBoletaEditar = 0;
+        private bool _cargandoEdicion = false;
 
         public Frm_Banrural()
         {
@@ -23,6 +25,11 @@ namespace Capa_Vista_Banrural //Paula Leonardo 0901-22-9580
 
             // Limitar longitud máxima
             Txt_Dpi.MaxLength = 13;
+        }
+
+        public Frm_Banrural(int idBoleta) : this()
+        {
+            _idBoletaEditar = idBoleta;
         }
 
         // LOAD
@@ -50,6 +57,55 @@ namespace Capa_Vista_Banrural //Paula Leonardo 0901-22-9580
 
             Cmb_Duracion.DataSource = null;
             Txt_TotalPagar.Clear();
+            if (_idBoletaEditar != 0)
+            {
+                CargarBoletaEditar();
+            }
+        }
+
+
+        private void CargarBoletaEditar()
+        {
+            _cargandoEdicion = true;
+            DataTable dt = ctrl.ObtenerBoletaPorId(_idBoletaEditar);
+            if (dt.Rows.Count == 0) return;
+
+            DataRow r = dt.Rows[0];
+
+            _idCiudadano = Convert.ToInt32(r["Pk_Id_Ciudadano"]);
+
+            Txt_Dpi.Text = r["Cmp_Dpi_Ciudadano"].ToString();
+            Txt_Nombres.Text = r["Cmp_Nombres_Ciudadano"].ToString();
+            Txt_Apellidos.Text = r["Cmp_Apellidos_Ciudadano"].ToString();
+
+            DateTime fechaNac = Convert.ToDateTime(r["Cmp_Fecha_Nacimiento_Ciudadano"]);
+            Txt_Edad.Text = CalcularEdad(fechaNac).ToString();
+
+            Txt_NoBoleta.Text = r["Cmp_Numero_Boleta"].ToString();
+
+            string tipo = r["Cmp_Tipo_Pasaporte"].ToString();
+            int duracion = Convert.ToInt32(r["Cmp_Duracion_Pasaporte"]);
+            decimal precio = Convert.ToDecimal(r["Precio"]);
+
+            // ✅ Primero setear el tipo
+            Cmb_TipoPasaporte.SelectedValue = tipo;
+
+            // ✅ Luego cargar las duraciones manualmente (para asegurar que exista DataSource)
+            DataTable dur = ctrl.ObtenerDuracionesPorTipo(tipo);
+            Cmb_Duracion.DisplayMember = "Cmp_Duracion_Pasaporte";
+            Cmb_Duracion.ValueMember = "Cmp_Duracion_Pasaporte";
+            Cmb_Duracion.DataSource = dur;
+
+            // ✅ Ahora sí seleccionar la duración
+            Cmb_Duracion.SelectedValue = duracion;
+
+            Txt_TotalPagar.Text = precio.ToString("0.00");
+
+            // ✅ Bloquear generación
+            Btn_GenerarBoleta.Enabled = false;
+            Txt_Dpi.Enabled = false; // opcional para que no cambien DPI en editar
+            Btn_BuscarDpi.Enabled = false; // opcional también
+            _cargandoEdicion = false;
         }
 
         // BOTONES (NAVEGACIÓN)
@@ -155,6 +211,7 @@ namespace Capa_Vista_Banrural //Paula Leonardo 0901-22-9580
         // TIPO / DURACIÓN / PRECIO - PASAPORTE
         private void Cmb_TipoPasaporte_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (_cargandoEdicion) return;
             if (Cmb_TipoPasaporte.SelectedValue == null)
                 return;
 
@@ -195,7 +252,8 @@ namespace Capa_Vista_Banrural //Paula Leonardo 0901-22-9580
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(Txt_NoBoleta.Text))
+            // ✅ Solo exigir No. Boleta si es NUEVA
+            if (_idBoletaEditar == 0 && string.IsNullOrWhiteSpace(Txt_NoBoleta.Text))
             {
                 MessageBox.Show("Primero genere el número de boleta.");
                 return;
@@ -221,7 +279,6 @@ namespace Capa_Vista_Banrural //Paula Leonardo 0901-22-9580
                 return;
             }
 
-            int noBoleta = int.Parse(Txt_NoBoleta.Text);
             string tipo = Cmb_TipoPasaporte.SelectedValue.ToString();
 
             if (!int.TryParse(Cmb_Duracion.SelectedValue.ToString(), out int duracion))
@@ -239,20 +296,47 @@ namespace Capa_Vista_Banrural //Paula Leonardo 0901-22-9580
                 return;
             }
 
-            int ok = ctrl.GuardarBoleta(noBoleta, _idCiudadano, idTipoReal);
+            int ok;
+            int noBoleta = 0;
+
+            if (_idBoletaEditar == 0)
+            {
+                // NUEVA BOLETA
+                noBoleta = int.Parse(Txt_NoBoleta.Text);
+                ok = ctrl.GuardarBoleta(noBoleta, _idCiudadano, idTipoReal);
+            }
+            else
+            {
+                // MODIFICAR BOLETA (solo cambia tipo/duración => FK tipo pasaporte)
+                ok = ctrl.ActualizarBoleta(_idBoletaEditar, idTipoReal);
+            }
 
             if (ok == 1)
             {
-                DialogResult dr = MessageBox.Show(
-                    "Boleta Pagada.\n¿Desea imprimir la boleta?",
-                    "Pago",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Information
-                );
-
-                if (dr == DialogResult.Yes)
+                if (_idBoletaEditar == 0)
                 {
-                    // ImprimirBoleta(); // Hacer despues
+                    MessageBox.Show(
+                        "Se ha pagado con éxito el pasaporte.",
+                        "Pago realizado",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+
+                    MessageBox.Show(
+                        $"Su número de boleta es: {noBoleta}",
+                        "Número de Boleta",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "La boleta fue modificada correctamente.",
+                        "Modificación",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
                 }
             }
             else
@@ -264,7 +348,6 @@ namespace Capa_Vista_Banrural //Paula Leonardo 0901-22-9580
         // LIMPIAR TODO
         private void Btn_LimpiarTodo_Click(object sender, EventArgs e)
         {
-            // Limpiar TextBox
             Txt_Dpi.Clear();
             Txt_Nombres.Clear();
             Txt_Apellidos.Clear();
@@ -272,17 +355,18 @@ namespace Capa_Vista_Banrural //Paula Leonardo 0901-22-9580
             Txt_NoBoleta.Clear();
             Txt_TotalPagar.Clear();
 
-            // Resetear variable
             _idCiudadano = 0;
+            _idBoletaEditar = 0;
 
-            // Resetear Combo Tipo
             Cmb_TipoPasaporte.SelectedIndex = -1;
 
-            // Limpiar Combo Duración
             Cmb_Duracion.DataSource = null;
             Cmb_Duracion.Items.Clear();
 
-            // Enfocar nuevamente DPI
+            Btn_GenerarBoleta.Enabled = true;
+            Txt_Dpi.Enabled = true;
+            Btn_BuscarDpi.Enabled = true;
+
             Txt_Dpi.Focus();
         }
 

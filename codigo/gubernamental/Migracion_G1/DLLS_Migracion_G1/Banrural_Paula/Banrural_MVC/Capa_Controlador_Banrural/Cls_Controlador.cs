@@ -49,5 +49,41 @@ namespace Capa_Controlador_Banrural
         {
             return sen.ObtenerIdTipoPasaporte(tipo, duracion);
         }
+
+        // 8. OBTENER BOLETAS POR CIUDADANO
+        public DataTable ObtenerBoletasPorCiudadano(int idCiudadano)
+        {
+            return sen.ObtenerBoletasPorCiudadano(idCiudadano);
+        }
+
+        // 8B.
+        public DataTable ObtenerTodasLasBoletasConCiudadano()
+        {
+            return sen.ObtenerTodasLasBoletasConCiudadano();
+        }
+
+        // 8C.
+        public DataTable ObtenerBoletasPorDpi(long dpi)
+        {
+            return sen.ObtenerBoletasPorDpi(dpi);
+        }
+
+        // 9. ELIMINAR BOLETA
+        public int EliminarBoleta(int idBoleta)
+        {
+            return sen.EliminarBoleta(idBoleta);
+        }
+
+        // 10. ACTUALIZAR BOLETA
+        public int ActualizarBoleta(int idBoleta, int idTipo)
+        {
+            return sen.ActualizarBoleta(idBoleta, idTipo);
+        }
+
+        // 11. OBTENER DETALLE DE BOLETA PARA EDITAR
+        public DataTable ObtenerBoletaPorId(int idBoleta)
+        {
+            return sen.ObtenerBoletaPorId(idBoleta);
+        }
     }
 }
