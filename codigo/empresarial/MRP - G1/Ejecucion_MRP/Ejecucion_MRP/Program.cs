@@ -17,7 +17,10 @@ namespace Ejecucion_MRP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
             Application.Run(new Splash_MRP());
+
+
         }
     }
 }
