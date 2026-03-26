@@ -1,4 +1,5 @@
-﻿using System;
+﻿// 0901-20-4620 Ruben Armando Lopez Luch
+using System;
 using System.Windows.Forms;
 namespace Capa_Vista_MRP
 {
