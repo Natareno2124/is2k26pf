@@ -1,6 +1,8 @@
-﻿using System;
+﻿// 0901-20-4620 Ruben Armando Lopez Luch
+using System;
 using System.Windows.Forms;
 using Capa_Controlador_Seguridad;
+using System.IO;
 
 namespace Capa_Vista_MRP
 {
@@ -9,8 +11,9 @@ namespace Capa_Vista_MRP
 
         private Cls_controlador_cambio_contrasena controlador = new Cls_controlador_cambio_contrasena();
         private int iIdUsuario;
+        
         public Frm_Cambiar_Contrasena(int iIdUsuarioActual)
-        {       
+        {
             InitializeComponent();
             iIdUsuario = iIdUsuarioActual;
 
@@ -82,6 +85,54 @@ namespace Capa_Vista_MRP
             Txt_contrasena_actual.UseSystemPasswordChar = !bMostrar;
             Txt_nueva_contrasena.UseSystemPasswordChar = !bMostrar;
             Txt_confirmar_contrasena.UseSystemPasswordChar = !bMostrar;
+        }
+
+        private void Btn_ayuda_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Ruta relativa donde está tu archivo CHM (igual que tu compañero)
+                const string subRutaAyuda = @"ayuda\componentes\seguridad\Ayuda_CambioContraseña.chm";
+
+                string rutaEncontrada = null;
+                DirectoryInfo dir = new DirectoryInfo(Application.StartupPath);
+
+                // Busca la carpeta hacia arriba (10 niveles)
+                for (int i = 0; i < 10 && dir != null; i++, dir = dir.Parent)
+                {
+                    string candidata = Path.Combine(dir.FullName, subRutaAyuda);
+                    if (File.Exists(candidata))
+                    {
+                        rutaEncontrada = candidata;
+                        break;
+                    }
+                }
+
+                // Ruta de respaldo (opcional)
+                string rutaAbsolutaRespaldo =
+                    @"C:\Users\arone\OneDrive\Escritorio\asis2k25p2\ayuda\componentes\seguridad\Ayuda_CambioContraseña.chm";
+
+                if (rutaEncontrada == null && File.Exists(rutaAbsolutaRespaldo))
+                    rutaEncontrada = rutaAbsolutaRespaldo;
+
+                if (rutaEncontrada != null)
+                {
+                    // Esta es la ruta INTERNA del archivo dentro del CHM
+                    string rutaInterna = @"ayuda_cambiar_contraseña.html";
+
+                    Help.ShowHelp(this, rutaEncontrada, HelpNavigator.Topic, rutaInterna);
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el archivo de ayuda.", "Advertencia",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al abrir la ayuda:\n" + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
