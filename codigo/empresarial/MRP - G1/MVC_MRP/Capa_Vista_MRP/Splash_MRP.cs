@@ -12,11 +12,13 @@ namespace Capa_Vista_MRP
 {
     public partial class Splash_MRP : Form
     {
+        int progress = 0;
 
         public Splash_MRP()
         {
             InitializeComponent();
             ConfigurarDiseño();
+            timer1.Start();
         }
 
 
@@ -36,5 +38,35 @@ namespace Capa_Vista_MRP
         {
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Console.WriteLine("Progreso actual: " + progress + "%");
+            lblPorcentaje.Visible = true;
+
+            if (this.Opacity < 1)
+            {
+                this.Opacity += 0.05;
+            }
+
+            progress += 1;
+
+            if (progress <= 100)
+            {
+                progressBar1.Value = progress;
+                lblPorcentaje.Text = progress.ToString() + "%";
+                this.Update();
+            }
+            else
+            {
+                timer1.Stop();
+                this.Hide();
+
+                Frm_Login login = new Frm_Login();
+                login.Show();
+            }
+        }
+
+
     }
 }

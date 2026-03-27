@@ -29,10 +29,13 @@ namespace Capa_Vista_MRP
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.LbTitulo = new System.Windows.Forms.Label();
             this.LbSubtitulo = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.picGif = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblPorcentaje = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picGif)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,12 +81,26 @@ namespace Capa_Vista_MRP
             this.picGif.TabIndex = 3;
             this.picGif.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lblPorcentaje
+            // 
+            this.lblPorcentaje.AutoSize = true;
+            this.lblPorcentaje.Location = new System.Drawing.Point(703, 353);
+            this.lblPorcentaje.Name = "lblPorcentaje";
+            this.lblPorcentaje.Size = new System.Drawing.Size(46, 17);
+            this.lblPorcentaje.TabIndex = 4;
+            this.lblPorcentaje.Text = "label1";
+            // 
             // Splash_MRP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Capa_Vista_MRP.Properties.Resources.Fondo_de_Minecraft_para_pc;
             this.ClientSize = new System.Drawing.Size(800, 416);
+            this.Controls.Add(this.lblPorcentaje);
             this.Controls.Add(this.picGif);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.LbSubtitulo);
@@ -103,5 +120,7 @@ namespace Capa_Vista_MRP
         private System.Windows.Forms.Label LbSubtitulo;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.PictureBox picGif;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblPorcentaje;
     }
 }
