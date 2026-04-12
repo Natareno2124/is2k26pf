@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9AC0B5B1-0DC0-4931-85FA-7DE7005A6128}</ProjectGuid>
+    <ProjectGuid>{3A4FA9B0-5E25-4342-8C24-3E5F39605AEE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Ejecucion_MantenimientosDM</RootNamespace>
-    <AssemblyName>Ejecucion_MantenimientosDM</AssemblyName>
+    <RootNamespace>Exe_Dispo_Inve</RootNamespace>
+    <AssemblyName>Exe_Dispo_Inve</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Capa_Vista_Mant_DiegoM">
-      <HintPath>..\..\Capa_Vista_Mant_DiegoM\bin\Debug\Capa_Vista_Mant_DiegoM.dll</HintPath>
+    <Reference Include="Capa_Vista">
+      <HintPath>..\..\..\MVC_Dispo_Inve\Capa_Vista\bin\Debug\Capa_Vista.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
