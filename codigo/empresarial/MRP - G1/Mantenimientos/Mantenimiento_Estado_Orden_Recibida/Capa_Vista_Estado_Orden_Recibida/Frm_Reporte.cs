@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Ejecucion
+namespace Capa_Vista_Estado_Orden_Recibida
 {
-    public partial class Form1 : Form
+    public partial class Frm_Reporte : Form
     {
-        public Form1()
+        public Frm_Reporte()
         {
             InitializeComponent();
         }
