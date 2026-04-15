@@ -330,6 +330,7 @@ namespace Capa_Vista_MRP
             this.disponibilidadDeInventarioToolStripMenuItem.Name = "disponibilidadDeInventarioToolStripMenuItem";
             this.disponibilidadDeInventarioToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.disponibilidadDeInventarioToolStripMenuItem.Text = "Disponibilidad de inventario";
+            this.disponibilidadDeInventarioToolStripMenuItem.Click += new System.EventHandler(this.disponibilidadDeInventarioToolStripMenuItem_Click);
             // 
             // recepciónDeMaterialesToolStripMenuItem
             // 

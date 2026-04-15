@@ -230,6 +230,11 @@ namespace Capa_Vista_MRP
             Capa_vista_Orden.Frm_Orden_Produccion m = new Capa_vista_Orden.Frm_Orden_Produccion();
             m.Show();
         }
+
+        private void disponibilidadDeInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }
