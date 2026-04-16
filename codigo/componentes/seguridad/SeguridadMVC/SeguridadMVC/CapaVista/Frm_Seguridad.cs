@@ -419,5 +419,11 @@ namespace Capa_Vista_Seguridad
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void equipoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_polideportivo p = new Frm_polideportivo();
+            p.Show();
+        }
     }
 }

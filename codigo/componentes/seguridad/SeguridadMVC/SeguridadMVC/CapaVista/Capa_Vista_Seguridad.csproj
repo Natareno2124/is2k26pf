@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EXAMEN_FINAL_POLIDEPORTIVO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EXAMEN_FINAL_POLIDEPORTIVO.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Frm_EmpleadosV2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,12 @@
     </Compile>
     <Compile Include="Frm_Perfiles.Designer.cs">
       <DependentUpon>Frm_Perfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_polideportivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_polideportivo.Designer.cs">
+      <DependentUpon>Frm_polideportivo.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Reporte_aplicacion.cs">
       <SubType>Form</SubType>
@@ -224,6 +236,12 @@
       <DependentUpon>Reporte_empleado.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reporte_EXAEN_FINAL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte_EXAEN_FINAL.Designer.cs">
+      <DependentUpon>Reporte_EXAEN_FINAL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reporte_modulo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -244,6 +262,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="EXAMEN_FINAL_POLIDEPORTIVO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EXAMEN_FINAL_POLIDEPORTIVO.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_EmpleadosV2.resx">
       <DependentUpon>Frm_EmpleadosV2.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Perfiles.resx">
       <DependentUpon>Frm_Perfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_polideportivo.resx">
+      <DependentUpon>Frm_polideportivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Reporte_aplicacion.resx">
       <DependentUpon>Frm_Reporte_aplicacion.cs</DependentUpon>
@@ -328,6 +353,9 @@
     <EmbeddedResource Include="Reporte_empleado.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Reporte_empleado.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte_EXAEN_FINAL.resx">
+      <DependentUpon>Reporte_EXAEN_FINAL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte_modulo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
