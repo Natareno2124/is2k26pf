@@ -11,9 +11,9 @@ using Capa_Controlador_Navegador;
 
 namespace Capa_Vista_Materiales
 {
-    public partial class Frm_Materiales : Form
+    public partial class Materiales : Form
     {
-        public Frm_Materiales()
+        public Materiales()
         {
             InitializeComponent();
             //parametros para navegador

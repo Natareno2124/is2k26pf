@@ -1,7 +1,7 @@
 ﻿
-namespace Capa_Vista_Movimiento_Inventario
+namespace Capa_Vista_Materiales
 {
-    partial class Frm_Movimiento_Inventario
+    partial class Materiales
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@ namespace Capa_Vista_Movimiento_Inventario
             // 
             this.navegador1.IPkId_Aplicacion = 0;
             this.navegador1.IPkId_Modulo = 0;
-            this.navegador1.Location = new System.Drawing.Point(1, 2);
+            this.navegador1.Location = new System.Drawing.Point(3, 3);
             this.navegador1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.navegador1.Name = "navegador1";
             this.navegador1.SAlias = null;
@@ -46,14 +46,14 @@ namespace Capa_Vista_Movimiento_Inventario
             this.navegador1.SNombreTabla = null;
             this.navegador1.TabIndex = 0;
             // 
-            // Frm_Movimiento_Inventario
+            // Frm_Materiales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1482, 856);
             this.Controls.Add(this.navegador1);
-            this.Name = "Frm_Movimiento_Inventario";
-            this.Text = "Frm_Movimiento_Inventario";
+            this.Name = "Frm_Materiales";
+            this.Text = "Frm_Materiales";
             this.ResumeLayout(false);
 
         }

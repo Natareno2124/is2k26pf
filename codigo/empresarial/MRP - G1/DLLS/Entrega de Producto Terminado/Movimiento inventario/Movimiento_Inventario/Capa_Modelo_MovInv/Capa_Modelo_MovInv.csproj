@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1C800948-CBF6-4D37-96E2-CAD25A1A58BA}</ProjectGuid>
+    <ProjectGuid>{FC402DE4-6B27-4CDF-B686-C1B09EC1C318}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Capa_Vista_Movimiento_Inventario</RootNamespace>
-    <AssemblyName>Capa_Vista_Movimiento_Inventario</AssemblyName>
+    <RootNamespace>Capa_Modelo_MovInv</RootNamespace>
+    <AssemblyName>Capa_Modelo_MovInv</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,18 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Capa_Controlador_NavegadorTrs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Capa_Modelo_Seguridad, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\NavegadorTransaccionalMVC\CapaControladorNavegador\bin\Debug\Capa_Controlador_NavegadorTrs.dll</HintPath>
-    </Reference>
-    <Reference Include="Capa_Vista_NavegadorTrs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\NavegadorTransaccionalMVC\CapaVistaNavegador\bin\Debug\Capa_Vista_NavegadorTrs.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\componentes\seguridad\SeguridadMVC\SeguridadMVC\CapaModelo\bin\Debug\Capa_Modelo_Seguridad.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,18 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Frm_Movimiento_Inventario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_Movimiento_Inventario.Designer.cs">
-      <DependentUpon>Frm_Movimiento_Inventario.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Dao_MovimientoInventarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Frm_Movimiento_Inventario.resx">
-      <DependentUpon>Frm_Movimiento_Inventario.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Sentencias_MovimientoInventarios.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

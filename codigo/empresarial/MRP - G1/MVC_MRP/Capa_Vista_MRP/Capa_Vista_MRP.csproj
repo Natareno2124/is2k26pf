@@ -88,8 +88,8 @@
     <Reference Include="Capa_Vista_Materiales">
       <HintPath>..\..\DLLS\Entrega de Producto Terminado\Materiales\Capa_Vista_Materiales\bin\Debug\Capa_Vista_Materiales.dll</HintPath>
     </Reference>
-    <Reference Include="Capa_Vista_Movimiento_Inventario">
-      <HintPath>..\..\DLLS\Entrega de Producto Terminado\Movimiento_Inventario\Capa_Vista_Movimiento_Inventario\bin\Debug\Capa_Vista_Movimiento_Inventario.dll</HintPath>
+    <Reference Include="Capa_Vista_MovInv">
+      <HintPath>..\..\DLLS\Entrega de Producto Terminado\Movimiento inventario\Movimiento_Inventario\Capa_Vista_MovInv\bin\Debug\Capa_Vista_MovInv.dll</HintPath>
     </Reference>
     <Reference Include="Capa_vista_Orden">
       <HintPath>..\..\DLLS\Plan y Orden de Producción\Orden de Produccion\Capa_vista_Orden\bin\Debug\Capa_vista_Orden.dll</HintPath>

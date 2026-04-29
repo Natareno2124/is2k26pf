@@ -17,7 +17,6 @@ using Capa_vista_produccion;
 // Enrega de producto terminado
 using Capa_Vista_Materiales;
 using Capa_Vista_InventarioPT;
-using Capa_Vista_Movimiento_Inventario;
 using Capa_Vista_RO;
 using Capa_Vista_CVRecetas;
 using Capa_Vista_Expl_Mat;
@@ -27,6 +26,7 @@ using Capa_Vista_Fases;
 using Capa_Vista_Cronograma;
 using Capa_vista_Orden;
 using Capa_Vista_DispoInve;
+using Capa_Vista_MovInv;
 
 namespace Capa_Vista_MRP
 {
@@ -180,7 +180,7 @@ namespace Capa_Vista_MRP
 
         private void materialesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Capa_Vista_Materiales.Frm_Materiales m = new Capa_Vista_Materiales.Frm_Materiales();
+            Capa_Vista_Materiales.Materiales m = new Capa_Vista_Materiales.Materiales();
             m.MdiParent = this;
             m.Show();
         }
@@ -194,7 +194,9 @@ namespace Capa_Vista_MRP
 
         private void movimientoInventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_Movimiento_Inventario m = new Frm_Movimiento_Inventario();
+
+
+            Movimiento_Inventario m = new Movimiento_Inventario();
             m.MdiParent = this;
             m.Show();
         }
