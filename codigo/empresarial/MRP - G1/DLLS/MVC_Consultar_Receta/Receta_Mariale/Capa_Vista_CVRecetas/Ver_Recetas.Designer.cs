@@ -38,8 +38,8 @@ namespace Capa_Vista_CVRecetas
             // Dgv_ConsultarRE
             // 
             this.Dgv_ConsultarRE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_ConsultarRE.Location = new System.Drawing.Point(9, 118);
-            this.Dgv_ConsultarRE.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Dgv_ConsultarRE.Location = new System.Drawing.Point(9, 101);
+            this.Dgv_ConsultarRE.Margin = new System.Windows.Forms.Padding(2);
             this.Dgv_ConsultarRE.Name = "Dgv_ConsultarRE";
             this.Dgv_ConsultarRE.RowHeadersWidth = 51;
             this.Dgv_ConsultarRE.RowTemplate.Height = 24;
@@ -62,7 +62,7 @@ namespace Capa_Vista_CVRecetas
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Highlight;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(-6, 20);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(620, 8);
             this.flowLayoutPanel1.TabIndex = 32;
@@ -71,14 +71,13 @@ namespace Capa_Vista_CVRecetas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(628, 368);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.Dgv_ConsultarRE);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Ver_Recetas";
             this.Text = "Ver_Recetas";
-
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_ConsultarRE)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

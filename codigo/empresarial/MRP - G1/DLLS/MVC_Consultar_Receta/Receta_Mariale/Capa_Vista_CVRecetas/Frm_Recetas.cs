@@ -53,9 +53,9 @@ namespace Capa_Vista_CVRecetas
 
         private void Frm_Recetas_Load(object sender, EventArgs e)
         {
-           
+
             pro_ObtenerFases(idBOMExistente);
-        } 
+        }
 
 
         public void cargarCombos()
@@ -104,7 +104,7 @@ namespace Capa_Vista_CVRecetas
         public void recargarDatos()
         {
             if (Cbo_producto.SelectedValue == null)
-            return;
+                return;
 
             int idProducto = Convert.ToInt32(Cbo_producto.SelectedValue);
 
@@ -123,6 +123,7 @@ namespace Capa_Vista_CVRecetas
 
             // dgv_detalle.DataSource = con.cargarBOMGrid(idProducto);
         }
+        // Diego Monterroso 0901-22-1369
         private void btn_reporte_Click(object sender, EventArgs e)
         {
             BOM_Reporte m = new BOM_Reporte();
@@ -444,6 +445,7 @@ namespace Capa_Vista_CVRecetas
                 "Ayuda_BOM.chm"
             );
 
+
             if (File.Exists(rutaAyuda))
             {
                 Help.ShowHelp(this, rutaAyuda, "Cliente.html");
@@ -545,10 +547,17 @@ namespace Capa_Vista_CVRecetas
             pro_ObtenerFases(idBOM);
         }
 
+        // Diego Monterroso - Boton Reportes
 
+        // Diego Monterroso 0901-22-1369
+        private void Btn_imprimir_Click_1(object sender, EventArgs e)
+        {
+            BOM_Reporte re = new BOM_Reporte();
 
+            // FORZAR REFRESH
+            re.Refresh();
 
-
-
+            re.Show();
+        }
     }
 }

@@ -81,6 +81,10 @@ namespace Capa_Controlador_Recetas
             return sen.obtenerDetalleBOM(id);
         }
 
-
+        // FILTRO DE RECETAS (BÚSQUEDA)
+        public DataTable filtrarListadoBOM(string id, string estado, DateTime? desde, DateTime? hasta)
+        {
+            return sen.filtrarBOM(id, estado, desde, hasta);
+        }
     }
 }

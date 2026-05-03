@@ -81,6 +81,6 @@ namespace Capa_Vista_CVRecetas
             }
         }
 
-    
+     
     }
 }
